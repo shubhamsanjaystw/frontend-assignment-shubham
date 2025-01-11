@@ -17,7 +17,7 @@ const RenderTableEntries = ({ entries, columnsToBeShown }) => {
     return (
         <tbody>
             {entries.map((entry, rowIndex) => (
-                <tr  key={rowIndex}>
+                <tr id='contentRow'  key={rowIndex}>
                      {columnsToBeShown.map((column, colIndex) => (
                         <td id='tableContent'key={colIndex}>{entry[column]}</td>
                     ))}
@@ -32,7 +32,7 @@ const Pagination = ({pageSize, setPageSize, currentPage, setCurrentPage, totalPa
       return (
         <div className='pagination'>
                 <span>
-                    <button onClick={()=>setCurrentPage((currentPage)=> currentPage-1) }>Last</button><input onChange={(e)=>setCurrentPage(e.target.value)}/><button onClick={()=>setCurrentPage((currentPage)=> currentPage+1) }>next</button>
+                    <button onClick={()=>setCurrentPage((currentPage)=> currentPage-1) }>{'<'}</button><input value={currentPage} onChange={(e)=>setCurrentPage(e.target.value)}/><button onClick={()=>setCurrentPage((currentPage)=> currentPage+1) }>{'>'}</button>
                 </span>
     </div>
       )
