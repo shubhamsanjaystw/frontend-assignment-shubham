@@ -1,10 +1,10 @@
 import React from 'react';
 
-const RenderTableHeader = ({ columns }) => {
+const RenderTableHeader = ({ columnsTitles }) => {
     return (
         <thead>
             <tr>
-                {columns.map((column, index) => (
+                {columnsTitles.map((column, index) => (
                     <th key={index}>{column}</th> 
                 ))}
             </tr>
@@ -12,31 +12,27 @@ const RenderTableHeader = ({ columns }) => {
     );
 };
 
-const RenderTableEntries = ({ entries }) => {
-    console.log('RenderTableEntries:', entries);
+const RenderTableEntries = ({ entries, columnsToBeShown }) => {
     return (
         <tbody>
             {entries.map((entry, rowIndex) => (
                 <tr key={rowIndex}>
-                    {Object.values(entry).map((value, colIndex) => (
-                        <td key={colIndex}>{value}</td>
+                     {columnsToBeShown.map((column, colIndex) => (
+                        <td key={colIndex}>{entry[column]}</td>
                     ))}
-                </tr>
-            ))}
+                </tr>)
+            )}
         </tbody>
     );
 };
 
-const RenderTableComponent = ({ columns, tableEntries }) => {
-    console.log('RenderTableComponent - columns:', columns);
-    console.log('RenderTableComponent - tableEntries:', tableEntries);
-
+const RenderTableComponent = ({ columnsTitles,columnsToBeShown,tableEntries }) => {
     return (
         <div>
             <h1>Kick Starter Projects</h1>
             <table border="1">
-                <RenderTableHeader columns={columns} />
-                <RenderTableEntries entries={tableEntries} />
+                <RenderTableHeader columnsTitles={columnsTitles} />
+                <RenderTableEntries entries={tableEntries} columnsToBeShown={columnsToBeShown} />
             </table>
         </div>
     );
