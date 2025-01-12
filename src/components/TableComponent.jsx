@@ -4,7 +4,7 @@ import './styles.css'
 const RenderTableHeader = ({ columnsTitles }) => {
     return (
         <thead>
-            <tr id='tableHeader'>
+            <tr className='tableHeader'>
                 {columnsTitles.map((column, index) => (
                     <th key={index}>{column}</th> 
                 ))}
@@ -18,14 +18,14 @@ const RenderTableEntries = ({ entries, columnsToBeShown }) => {
     return (
         entries.length >0 ? (<tbody>
             {entries.map((entry, rowIndex) => (
-                <tr id='contentRow'  key={rowIndex}>
+                <tr key={rowIndex}>
                      {columnsToBeShown.map((column, colIndex) => (
-                        <td id='tableContent'key={colIndex}>{entry[column]}</td>
+                        <td className='tableContent'key={colIndex}>{entry[column]}</td>
                     ))}
                 </tr>)
             )}
         </tbody>) : <tr>
-            <td id='noDataText' colSpan={columnsToBeShown.length} style={{ textAlign: 'center' }}>
+            <td className='noDataText' colSpan={columnsToBeShown.length} style={{ textAlign: 'center' }}>
                 No Data Available
             </td>
         </tr>
@@ -61,7 +61,7 @@ const RenderTableComponent = ({ columnsTitles,columnsToBeShown,tableEntries }) =
     const tableEntriesForPage = tableEntries.slice(startIndex,endIndex)
 
     return (
-        <div id='tableWrp'>
+        <div className='tableWrp'>
             <table >
                 <RenderTableHeader columnsTitles={columnsTitles} />
                 <RenderTableEntries entries={tableEntriesForPage} columnsToBeShown={columnsToBeShown} />

@@ -8,10 +8,9 @@ const App = () => {
   const kickstarterProjectTableColumns = ['S.No.','Percentage funded','Amount pledged']
   const columnsToBeShown = ['s.no','percentage.funded', 'amt.pledged'];
  return (
-    <div id='page' className='card'>
-      
-      <h1 id='tableHeading'>Kick Starter Projects</h1>
-      <div  className='card'>
+    <div className='page card'>
+      <h1 className='tableHeading' data-testid="tableHeading">Kick Starter Projects</h1>
+      <div  className='TableCards card'>
       <RenderTableComponent columnsTitles ={ kickstarterProjectTableColumns } columnsToBeShown= {columnsToBeShown} tableEntries={ projects } />
       </div>
     </div>
