@@ -20,7 +20,7 @@
 }
 
 #tableHeading{
-    font-family:'Courier New', Courier, monospace;
+    font-family: inherit;
     font-size: 4.5rem;
     color: white;
     text-align:center;
