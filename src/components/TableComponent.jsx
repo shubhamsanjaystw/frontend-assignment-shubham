@@ -32,7 +32,7 @@ const RenderTableEntries = ({ entries, columnsToBeShown }) => {
     )
 };
 
-const Pagination = ({pageSize, setPageSize, currentPage, setCurrentPage, totalPage })=> {
+const Pagination = ({ currentPage, setCurrentPage, totalPage })=> {
  
       return (
         <div className='pagination'>

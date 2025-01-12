@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.css'
-
 import useKickStarterProjectContainer from './dataContainer/useKickStarterProjectContainer'
 import RenderTableComponent from './components/TableComponent'
+import './App.css'
 
 const App = () => {
   const {projects} = useKickStarterProjectContainer();
