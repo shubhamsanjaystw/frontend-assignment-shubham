@@ -1,16 +1,31 @@
 table{
     border-spacing: 0;
-    
 }
 
-#tableWrp{
+.tableWrp
+.noDataText{
+    font-size: 2.5rem;
+    color: white;
+    text-align:center;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    padding-top: 3rem ;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.tableWrp{
     display: flex;
     flex-direction: column;
     padding: 3rem;
-    gap: 4rem; 
-    
+    gap: 4rem;   
 }
-
+.tableWrp
 .pagination {
     display: flex;
     flex-wrap: wrap;
@@ -25,6 +40,7 @@ table{
 
 }
 
+.tableWrp
 .pagination button {
     width: 40px;
     height: 40px;
@@ -36,6 +52,12 @@ table{
     background: transparent;
     color: #fff;
 }
+
+.buttonInactive:hover{
+    cursor: not-allowed;
+}
+
+.tableWrp
 .pagination input{
     width: 40px;
     height: 40px;
@@ -59,14 +81,14 @@ tr:hover {
     border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
-
-#tableContent{
+.tableWrp
+.tableContent{
     font-size: 1.5rem;
     text-align: center;
 }
 
-
-#tableHeader{
+.tableWrp
+.tableHeader{
     font-family: inherit;
 color: white;
 font-size: 2rem;
@@ -75,23 +97,38 @@ backdrop-filter: none;
 
 
 @media screen and (max-width: 768px) {
-    #tableHeader{
+    .tableWrp{
+        padding: 2rem;
+        gap: 5rem;   
+    }
+    .tableWrp
+    .tableHeader{
         font-size: 1.5rem;
     }
+    .tableWrp
+    .noDataText{
+        font-size: 1.75rem;
+    }
 
-    #tableContent{
+    .tableWrp
+    .tableContent{
         font-size: 1.2rem;
     } 
 
+    .tableWrp
     .pagination {
         width: 56%;
     }
+
+    .tableWrp
     .pagination button {
         width: 24px;
         height: 24px;
         font-size: 1.2rem;
         margin: 0 1rem;
     }
+
+    .tableWrp
     .pagination input{
         width: 24px;
         height: 24px;
@@ -103,22 +140,36 @@ backdrop-filter: none;
 
 
 @media screen and (max-width: 480px) {
-    #tableHeader{
+    .tableWrp{
+        padding: 1rem; 
+    }
+    .tableWrp
+    .tableHeader{
         font-size: 1.2rem;
     }
-    #tableContent{
+    .tableWrp
+    .noDataText{
+        font-size: 1.25rem;
+    }
+    .tableWrp
+    .tableContent{
         font-size: 1rem;
     }    
 
+    .tableWrp
     .pagination {
-        width: 70%;
+        width: 80%;
     }
+
+    .tableWrp
     .pagination button {
         width: 18px;
         height: 18px;
         font-size: 1rem;
         margin: 0 1rem;
     }
+
+    .tableWrp
     .pagination input{
         width: 18px;
         height: 18px;
